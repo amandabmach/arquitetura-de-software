@@ -9,5 +9,13 @@ class TurmaPresencial extends Turma {
     }
 
     get frequencia () { return this.#frequencia }
+
+    aprovado(){
+        if(this.nota >= 6.0 && this.#frequencia >= 75){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 export { TurmaPresencial } 
