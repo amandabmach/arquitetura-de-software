@@ -1,6 +1,6 @@
 import { Aluno } from "./Aluno.js";
 import { Turma } from "./Turma.js";
-import { TurmaPresencial } from "./turmaPresencial.js";
+import { TurmaPresencial } from "./TurmaPresencial.js";
 
 let aluno1 = new Aluno("João", "joao123", "123456");
 let aluno2 = new Aluno("Maria", "maria456", "789012");
