@@ -1,7 +1,5 @@
-import sys from 'node:sys';
-
-import FormaterHTML from './src/FormaterHTML.js';
-import FormaterTXT from './src/FormaterTXT.js';
+import FormaterHTML from './src/formatters/FormatterHTML.js';
+import FormaterTXT from './src/formatters/FormatterTXT.js';
 import CitiesReporter from './src/CitiesReporter.js';
 
 const [cmd, script, param1] = process.argv,

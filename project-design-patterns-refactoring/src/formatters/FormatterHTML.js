@@ -1,6 +1,6 @@
-import AbstractFormater from './AbstractFormater.js';
+import AbstractFormatter from './AbstractFormatter.js';
 
-export default class FormaterHTML extends AbstractFormater {
+export default class FormatterHTML extends AbstractFormatter {
 
   output (cities) {
     let html = `
