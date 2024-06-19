@@ -18,7 +18,7 @@ export default class HTMLReportGenerator2 extends ReportGenerator {
 `;
 
     data.forEach(cidade => {
-      htmlContent += `        <li><span class="cidade">${cidade}</span></li>\n`;
+      htmlContent += `        <li><span class="cidade">${cidade.Nome}</span></li>\n`;
     });
 
     htmlContent += `      </ul>

@@ -8,7 +8,7 @@ export default class TXTReportGenerator extends ReportGeneretor {
 `;
 
     data.forEach(cidade => {
-      txtContent += `* ${cidade}\n`;
+      txtContent += `* ${cidade.Nome}\n`;
     });
 
     return txtContent;

@@ -1,7 +1,7 @@
 {
   "name": "project-design-patterns-refactoring",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "GenerateReport.js",
   "type": "module",
   "scripts": {
     "test": "node src/tests/test.js"
