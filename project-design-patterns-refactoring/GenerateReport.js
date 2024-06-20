@@ -9,7 +9,6 @@ const dataFilePath = path.join(process.cwd(), './data/cidades-2.json');
 const outputFilePathHTML = path.join(process.cwd(), 'relatorio_cidades.html');
 const outputFilePathTXT = path.join(process.cwd(), 'relatorio_cidades.txt');
 const outputFilePathHTML2 = path.join(process.cwd(), 'relatorio_cidades2.html');
-const outputFilePathHTMLPers= path.join(process.cwd(), 'relatorio_cidades_personalizado.html');
 
 const dataReader = DataReaderFactory.createDataReader('json');
 
