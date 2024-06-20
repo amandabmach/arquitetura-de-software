@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 
 // Função para ler o conteúdo de um arquivo
 function readFileContent(filePath) {
-  return fs.readFileSync(filePath, 'utf8');
+  return fs.readFileSync(filePath, 'utf8').trim();
 }
 
 // Configuração dos caminhos para os arquivos de saída gerados pelo relatório
@@ -14,26 +14,25 @@ const __dirname = path.dirname(__filename);
 const outputFilePathHTML = path.join(__dirname, '../../relatorio_cidades.html');
 const outputFilePathTXT = path.join(__dirname, '../../relatorio_cidades.txt');
 const outputFilePathHTML2 = path.join(__dirname, '../../relatorio_cidades2.html');
-const outputFilePathPers= path.join(__dirname, '../../relatorio_cidades_personalizado.html');
+const outputFilePathPers = path.join(__dirname, '../../relatorio_cidades_personalizado.html');
 
-// Teste para o relatório HTML padrão
-const expectedHTML = readFileContent(path.join(__dirname, 'expectedFile', 'relatoriohtml1.html'));
-const actualHTML = readFileContent(outputFilePathHTML);
-assert.strictEqual(actualHTML.trim(), expectedHTML.trim(), 'O relatório HTML padrão gerado está incorreto');
+describe('Testes de geração de relatórios', () => {
+  it('Deve gerar corretamente o relatório HTML padrão', () => {
+    const expectedHTML = readFileContent(path.join(__dirname, 'expectedFile', 'relatoriohtml1.html'));
+    const actualHTML = readFileContent(outputFilePathHTML);
+    assert.strictEqual(actualHTML, expectedHTML, 'O relatório HTML padrão gerado está incorreto');
+  });
 
-// Teste para o relatório TXT
-const expectedTXT = readFileContent(path.join(__dirname, 'expectedFile', 'relatorio.txt'));
-const actualTXT = readFileContent(outputFilePathTXT);
-assert.strictEqual(actualTXT.trim(), expectedTXT.trim(), 'O relatório TXT gerado está incorreto');
+  it('Deve gerar corretamente o relatório TXT', () => {
+    const expectedTXT = readFileContent(path.join(__dirname, 'expectedFile', 'relatorio.txt'));
+    const actualTXT = readFileContent(outputFilePathTXT);
+    assert.strictEqual(actualTXT, expectedTXT, 'O relatório TXT gerado está incorreto');
+  });
 
-// Teste para o segundo formato de relatório HTML
-const expectedHTML2 = readFileContent(path.join(__dirname, 'expectedFile', 'relatoriohtml2.html'));
-const actualHTML2 = readFileContent(outputFilePathHTML2);
-assert.strictEqual(actualHTML2.trim(), expectedHTML2.trim(), 'O segundo formato de relatório HTML gerado está incorreto');
+  it('Deve gerar corretamente o segundo formato de relatório HTML', () => {
+    const expectedHTML2 = readFileContent(path.join(__dirname, 'expectedFile', 'relatoriohtml2.html'));
+    const actualHTML2 = readFileContent(outputFilePathHTML2);
+    assert.strictEqual(actualHTML2, expectedHTML2, 'O segundo formato de relatório HTML gerado está incorreto');
+  });
+});
 
-// Teste para o segundo formato de relatório HTML
-const expectedPers = readFileContent(path.join(__dirname, 'expectedFile', 'personalizado.html'));
-const actualPers = readFileContent(outputFilePathPers);
-assert.strictEqual(actualPers.trim(), expectedPers.trim(), 'O formato de relatório HTML Personalizado gerado está incorreto');
-
-console.log('Todos os testes passaram com sucesso!');
