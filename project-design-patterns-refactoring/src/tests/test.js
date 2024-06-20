@@ -14,6 +14,7 @@ const __dirname = path.dirname(__filename);
 const outputFilePathHTML = path.join(__dirname, '../../relatorio_cidades.html');
 const outputFilePathTXT = path.join(__dirname, '../../relatorio_cidades.txt');
 const outputFilePathHTML2 = path.join(__dirname, '../../relatorio_cidades2.html');
+const outputFilePathPers= path.join(__dirname, '../../relatorio_cidades_personalizado.html');
 
 // Teste para o relatório HTML padrão
 const expectedHTML = readFileContent(path.join(__dirname, 'expectedFile', 'relatoriohtml1.html'));
@@ -29,5 +30,10 @@ assert.strictEqual(actualTXT.trim(), expectedTXT.trim(), 'O relatório TXT gerad
 const expectedHTML2 = readFileContent(path.join(__dirname, 'expectedFile', 'relatoriohtml2.html'));
 const actualHTML2 = readFileContent(outputFilePathHTML2);
 assert.strictEqual(actualHTML2.trim(), expectedHTML2.trim(), 'O segundo formato de relatório HTML gerado está incorreto');
+
+// Teste para o segundo formato de relatório HTML
+const expectedPers = readFileContent(path.join(__dirname, 'expectedFile', 'personalizado.html'));
+const actualPers = readFileContent(outputFilePathPers);
+assert.strictEqual(actualPers.trim(), expectedPers.trim(), 'O formato de relatório HTML Personalizado gerado está incorreto');
 
 console.log('Todos os testes passaram com sucesso!');
