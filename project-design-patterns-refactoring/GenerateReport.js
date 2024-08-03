@@ -2,7 +2,7 @@ import path from 'node:path';
 import DataReaderFactory from './src/readers/DataReaderFactory.js';
 import ReportGeneratorFactory from './src/reports/ReportGeneratorFactory.js';
 import ReportService from './src/services/ReportService.js';
-import StyledHTMLReportDecorator from './src/reports/StyledHTMLReportDecorator.js'; // Importando o novo decorator
+import StyledHTMLReportDecorator from './src/reports/StyledHTMLReportDecorator.js';
 
 // Script para geração de relatórios
 const dataFilePath = path.join(process.cwd(), './data/cidades-2.json');
